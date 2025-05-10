@@ -35,8 +35,6 @@ ros2_calculator_cpp/
 │   ├── input_value2_node.cpp
 │   ├── operator_node.cpp
 │   └── calculator_node.cpp
-├── launch/
-│   └── calculator.launch.py
 ├── CMakeLists.txt
 ├── package.xml
 └── README.md
@@ -49,24 +47,18 @@ ros2_calculator_cpp/
 ### ✅ Build
 
 ```bash
-cd ~/ros2_ws
-colcon build --packages-select ros2_calculator_cpp
+cd ~/ros2_ws # your ros2 workspace
+colcon build --packages-select ros2_calculator
 source install/setup.bash
 ```
 
 ### ▶️ Run Individual Nodes
 
 ```bash
-ros2 run ros2_calculator_cpp input_value1_node
-ros2 run ros2_calculator_cpp input_value2_node
-ros2 run ros2_calculator_cpp operator_node
-ros2 run ros2_calculator_cpp calculator_node
-```
-
-### 📦 Or Run All with Launch File
-
-```bash
-ros2 launch ros2_calculator_cpp calculator.launch.py
+ros2 run ros2_calculator value1_publisher
+ros2 run ros2_calculator value2_publisher
+ros2 run ros2_calculator operator_publisher
+ros2 run ros2_calculator calculator_node
 ```
 
 ---
@@ -78,7 +70,6 @@ ros2 launch ros2_calculator_cpp calculator.launch.py
 | `/value1`   | `std_msgs/msg/Int32`    | First input integer          |
 | `/value2`   | `std_msgs/msg/Int32`    | Second input integer         |
 | `/operator` | `std_msgs/msg/String`   | Operator (`+`, `-`, `*`, `/`)|
-| `/result`   | `std_msgs/msg/Float32`  | Result of the calculation    |
 
 ---
 
@@ -91,5 +82,6 @@ ros2 launch ros2_calculator_cpp calculator.launch.py
 
 ## 👨‍💻 Author
 
-Made with ❤️ by **[Your Name]**  
+Made by Dongwook
+
 Learning ROS2 with C++ through hands-on mini-projects!
